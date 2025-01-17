@@ -1,0 +1,28 @@
+/* 文本超出后隐藏 $num 行数 */
+@mixin textEllipsisNum($num) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $num; //向显示多少行就给多大值
+  -webkit-box-orient: vertical;
+}
+
+@mixin textEllipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 文本样式 */
+@mixin txts($fs, $cl, $wt: 500) {
+  @if $fs {
+    font-size: #{$fs}Px; 
+  }
+
+  @if $cl {
+    color: $cl;
+  }
+
+  @if $wt {
+    font-weight: $wt;
+  }
+}
